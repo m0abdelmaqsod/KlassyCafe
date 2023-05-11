@@ -1,0 +1,3112 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+    list-style-type: none;
+    scroll-behavior: smooth;
+}
+
+
+
+
+
+/* ====== start of loader_bg ====== */
+.loader_bg {
+    position: fixed;
+    z-index: 999999;
+    background-color: #fb5849;
+    width: 100%;
+    height: 100%;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    animation: loadeOpacity 1.5s;
+}
+
+/* ====== start of loader ====== */
+.loader_bg .loader {
+    border: 0 solid transparent;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loader_bg .loader::before,
+.loader_bg .loader::after {
+    content: '';
+    border: 15px solid #fff;
+    border-radius: 50%;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation: loader 1s linear infinite;
+}
+
+.loader_bg .loader::before {
+    animation-delay: 0.5s;
+}
+
+@keyframes loader {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+@keyframes loadeOpacity {
+    0% {
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+
+    }
+
+    90% {
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+
+    }
+
+    100% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+}
+
+/* ====== end of loader ====== */
+/* ====== end of loader_bg ====== */
+
+
+
+
+
+
+
+
+
+/* ====== start of btnArrowUP and btnArrowDown ====== */
+.btnArrowUP a,
+.btnArrowDown a {
+    background-color: #fb5849;
+    color: #000;
+    border: 1px solid #000;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    position: fixed;
+    top: 83vh;
+    right: 80px;
+    opacity: 0.4;
+    z-index: 1;
+    transition: all 0.5s;
+}
+
+.btnArrowDown a {
+    top: 90vh;
+}
+
+.btnArrowUP a:hover,
+.btnArrowDown a:hover {
+    opacity: 1;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+/* ====== end of btnArrowUP and btnArrowDown ====== */
+
+
+
+
+
+
+
+
+
+
+
+/* start of selection */
+::selection {
+    background-color: #fb5849;
+    color: #fff;
+}
+
+/* start of scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #e4e3e3;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #fb58493d;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #fb5849;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==== satrt of navbar ==== */
+.navbar {
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 0px 0 8px;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+}
+
+.navbar .nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+/* ==== start toogle menu ==== */
+.navbar .nav .divToogle {
+    display: flex;
+    justify-content: end;
+}
+
+.navbar .nav .divToogle .toogle {
+    width: 55px;
+    height: 50px;
+    position: relative;
+    top: 5px;
+    /* left: 0px; */
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    display: none;
+}
+
+.navbar .nav .divToogle .toogle span {
+    position: absolute;
+    background-color: #000;
+    width: 35px;
+    height: 2px;
+    border-radius: 30px;
+    transition: 0.8s;
+}
+
+.navbar .nav .divToogle .toogle.active span:nth-child(3) {
+    transform: translateX(55px);
+}
+
+.navbar .nav .divToogle .toogle span:nth-child(1) {
+    width: 15px;
+    transform: translateY(13px);
+    left: 10px;
+}
+
+.navbar .nav .divToogle .toogle.active span:nth-child(1) {
+    transform: translateY(0px) rotate(45deg);
+    transition-delay: 0.125s;
+    width: 35px;
+}
+
+.navbar .nav .divToogle .toogle span:nth-child(2) {
+    width: 25px;
+    transform: translateY(-13px);
+    left: 10px;
+}
+
+.navbar .nav .divToogle .toogle.active span:nth-child(2) {
+    transform: translateY(0px) rotate(315deg);
+    transition-delay: 0.25s;
+    width: 35px;
+}
+
+/* ==== end toogle menu ==== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==== satrt menu ==== */
+.navbar .menu {
+    margin: auto 0;
+}
+
+.navbar .menu .menTog {
+    display: flex;
+}
+
+.navbar .menu ul li {
+    margin: 0 0 0 7%;
+}
+
+.navbar .menu ul li a {
+    font-weight: 500;
+    color: black;
+    transition: 0.5s;
+}
+
+.navbar .menu ul li a:hover {
+    color: orangered;
+    transition: 0.5s;
+}
+
+.navbar .menu ul .home {
+    margin: 0;
+}
+
+.navbar .menu ul .features {
+    transition: 0.5s;
+    position: relative;
+}
+
+.navbar .menu ul .features i {
+    font-size: 11px;
+    margin-left: 5px;
+}
+
+
+/* ==== satrt menuFeatures ==== */
+.navbar .menu ul .features .ulMenu {
+    background-color: transparent;
+    width: 250%;
+    height: 0vh;
+    position: absolute;
+    transform: translateY(30vh);
+    transition: 0.8s;
+    transition-delay: 0.2s;
+    overflow: hidden;
+}
+
+.navbar .menu ul .features:hover .ulMenu {
+    box-shadow: 0 0 0.5px;
+    background-color: whitesmoke;
+    transform: translateY(3vh);
+    height: 27vh;
+    transition: 0.5s;
+}
+
+.navbar .menu ul .features .ulMenu .menuFeatures li {
+    border-bottom: 1px solid rgba(136, 136, 136, 0.205);
+    padding: 10px 0;
+    margin: 0 0 0 0;
+    transition: 0.5s;
+}
+
+.navbar .menu ul .features .ulMenu .menuFeatures li a {
+    padding: 10px 15px 10px 0;
+    margin-left: 20px;
+    font-weight: 100;
+    transition: 0.5s;
+}
+
+.navbar .menu ul .features .ulMenu .menuFeatures li:hover {
+    background-color: #fff;
+    transition: 0.8s;
+    padding-left: 10px;
+}
+
+.navbar .menu ul .features .ulMenu .menuFeatures li:hover a {
+    transition: 0.8s;
+    color: orangered;
+}
+
+/* ==== end menu ==== */
+
+/* ==== end of navbar ==== */
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==== start of header ====  */
+.header {
+    padding-top: 16vh;
+}
+
+.header .head {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* ==== start make_a_reservation ==== */
+.header .head .make_a_reservation {
+    background: url(../images/top-left-bg.jpg)no-repeat center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.header .head .make_a_reservation .reservation {
+    width: 50%;
+    position: relative;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* ==== start logo --> h4 ==== */
+.header .head .make_a_reservation .reservation h4 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 55px;
+    font-weight: bolder;
+    color: #fff;
+}
+
+/* ==== start logo --> h6 ==== */
+.header .head .make_a_reservation .reservation h6 {
+    font-size: 17px;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+/* ==== start btn_reservation ==== */
+.header .head .make_a_reservation .btn_reservation {
+    width: 50%;
+    position: relative;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header .head .make_a_reservation .btn_reservation a {
+    background-color: #fff;
+    padding: 12px 25px;
+    border-radius: 3px;
+    font-weight: bolder;
+    font-size: 14px;
+    color: orangered;
+}
+
+.header .head .make_a_reservation .reservation a:hover {
+    background-color: rgb(255, 235, 235);
+}
+
+/* ==== end btn_reservation ==== */
+
+/* ==== end make_a_reservation ==== */
+
+
+/* ==== start head_img ==== */
+.header .head .head_img {
+    grid-column: 2/4;
+    width: 1300px;
+    max-width: 70vw;
+    height: 100vh;
+    margin: auto;
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.header .head .head_img .sliderImages {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    width: max-content;
+    transition: 1s;
+}
+
+
+.header .head .head_img .sliderImages img {
+    width: 1300px;
+    max-width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==== end head_img ==== */
+
+
+/* ==== start head_img btn_next_and_prev ==== */
+.header .head .head_img .btn_next_prev {
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .head .head_img .btn_next_prev .icon a {
+    background-color: rgba(255, 68, 0, 0.438);
+    color: rgba(255, 255, 255, 0.438);
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 50%;
+    transition: 0.8s;
+}
+
+
+.header .head .head_img .btn_next_prev .icon .prev.disabled,
+.header .head .head_img .btn_next_prev .icon .next.disabled {
+    background-color: #fb584969;
+    cursor: no-drop;
+}
+
+.header .head .head_img .btn_next_prev .icon a:hover {
+    background-color: orangered;
+    color: #fff;
+    transition: 0.8s;
+}
+
+.header .head .head_img .btn_next_prev .icon .prev.disabled:hover,
+.header .head .head_img .btn_next_prev .icon .prev.disabled:hover {
+    background-color: #fb584969;
+}
+
+/* ==== end btn_next_and_prev ==== */
+
+/* ==== end of header ==== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==== start about us ==== */
+.about_us {
+    width: 80%;
+    margin: 20vh auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5%;
+}
+
+
+/* ==== satrt memory_for_you ==== */
+.about_us .memory_for_you h6 {
+    color: orangered;
+    position: relative;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    padding-left: 40px;
+}
+
+.about_us .memory_for_you h6::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 30px;
+    height: 1px;
+    background-color: orangered;
+}
+
+
+.about_us .memory_for_you h2 {
+    width: 80%;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    font-size: 30px;
+    margin: 20px 0 30px;
+    line-height: 40px;
+}
+
+.about_us .memory_for_you p {
+    line-height: 25px;
+    font-size: 15px;
+}
+
+.about_us .memory_for_you .img_about_us {
+    margin-top: 7vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6%;
+}
+
+.about_us .memory_for_you .img_about_us img {
+    width: 100%;
+}
+
+
+.about_us .memory_for_you p a {
+    text-decoration: none;
+    color: blue;
+}
+
+/* ==== end memory_for_you ==== */
+
+
+/* ==== start div video ==== */
+.about_us .video {
+    position: relative;
+}
+
+.about_us .video img {
+    width: 100%;
+}
+
+.about_us .video a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 35px;
+    border-radius: 50%;
+    background-color: orangered;
+    color: #fff;
+}
+
+.about_us .video a:hover {
+    background-color: rgba(255, 68, 0, 0.822);
+    color: rgba(255, 255, 255, 0.822);
+    transition: 0.5s;
+}
+
+/* ==== end div video ==== */
+
+/* ==== end about us ==== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==== start of our_menu ==== */
+.our_menu {
+    background-color: rgba(250, 235, 215, 0.253);
+    margin-top: 15vh;
+    padding: 20vh 0 1vh;
+}
+
+
+/* ==== start of selection_of_cakes ==== */
+.our_menu .selection_of_cakes {
+    width: 80%;
+    margin: auto;
+
+}
+
+.our_menu .selection_of_cakes h6 {
+    font-size: 15px;
+    color: orangered;
+    position: relative;
+    font-weight: 500;
+    padding-left: 40px;
+    letter-spacing: 3px;
+}
+
+.our_menu .selection_of_cakes h6::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 30px;
+    height: 1px;
+    background-color: orangered;
+
+}
+
+.our_menu .selection_of_cakes h2 {
+    margin: 30px 0;
+    width: 35%;
+    letter-spacing: 1px;
+    font-size: 30px;
+    margin: 20px 0 30px;
+    line-height: 40px;
+}
+
+/* ==== end of our_menu ==== */
+
+
+
+
+
+
+/* ==== start our_menu ==== */
+.our_menu .slider_our_menu {
+    height: 65vh;
+    width: 98%;
+    margin: 20vh auto 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.our_menu .slider_our_menu .card_img_cake {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: max-content;
+    transition: 1s;
+}
+
+
+.our_menu .slider_our_menu .card_img_cake .card {
+    border-radius: 5px;
+    position: relative;
+    height: 65vh;
+    width: 240px;
+    margin: 0 31px 0 0;
+    overflow: hidden;
+}
+
+.our_menu .slider_our_menu .card_img_cake .card .price {
+    position: absolute;
+}
+
+.our_menu .slider_our_menu .card_img_cake .card .price h6 {
+    height: 70px;
+    width: 70px;
+    text-align: center;
+    line-height: 70px;
+    background-color: orangered;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 5px;
+    border-end-end-radius: 35px;
+}
+
+.our_menu .slider_our_menu .card_img_cake .card .price h6::after {
+    content: '';
+    position: absolute;
+    top: 70px;
+    left: 0;
+    border-start-start-radius: 50%;
+    width: 80px;
+    height: 80px;
+    box-shadow: -43px -15px 0px orangered;
+}
+
+.our_menu .slider_our_menu .card_img_cake .card .info {
+    background-color: orangered;
+    position: absolute;
+    transform: translateY(30vh);
+    padding: 25px;
+    bottom: -50px;
+    transition: 0.5s;
+    border-start-start-radius: 35px;
+}
+
+.our_menu .slider_our_menu .card_img_cake .card .info::after {
+    content: '';
+    position: absolute;
+    top: -79px;
+    right: 0;
+    border-end-end-radius: 50%;
+    width: 80px;
+    height: 80px;
+    box-shadow: 15px 10px 0px orangered;
+}
+
+.our_menu .card_img_cake .card:hover .info {
+    transition: 0.5s;
+    transform: translateY(-6vh);
+}
+
+.our_menu .card_img_cake .card4 .info h1 {
+    font-size: 17px;
+}
+
+.our_menu .card_img_cake .card .info h1 {
+    color: #fff;
+    margin: 20px 0;
+}
+
+.our_menu .card_img_cake .card .info p {
+    color: #fff;
+    line-height: 25px;
+}
+
+.our_menu .card_img_cake .card .info .main_text_button {
+    margin: 20px 0;
+}
+
+.our_menu .card_img_cake .card .info .main_text_button .scroll_to_section a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 900;
+}
+
+.our_menu .slider_our_menu .card_img_cake .card .div_img img {
+
+    height: 65vh;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+
+/* ==== start btn_next_and_prev ==== */
+.our_menu .btn_next_prev {
+    display: flex;
+    justify-content: center;
+    margin: 8vh 0;
+}
+
+.our_menu .btn_next_prev .icon a {
+    color: orangered;
+    margin: auto 10px;
+    font-size: 20px;
+}
+
+/* ==== end btn_next_and_prev ==== */
+
+
+/* ==== end our_menu ==== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==== start of our_chef ==== */
+.our_chef {
+    text-align: center;
+    padding: 10vh 0 0 0;
+}
+
+.our_chef .title_our_chef h6 {
+    font-size: 15px;
+    color: orangered;
+    letter-spacing: 3px;
+    margin: 0 0 5vh 0;
+}
+
+.our_chef .title_our_chef h2 {
+    width: 25%;
+    margin: auto;
+    font-size: 30px;
+}
+
+/* ==== end title_our_chef ==== */
+
+/* ==== start div_img  ==== */
+.our_chef .div_img {
+    width: 80%;
+    margin: 15vh auto 10vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3%;
+}
+
+.our_chef .div_img .div_chefs {
+    border: 1px solid #00000049;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.our_chef .div_img .div_chefs .img_our_chef img {
+    width: 100%;
+}
+
+.our_chef .div_img .div_chefs:hover {
+    border: 1px solid orangered;
+    transition: 0.5s;
+}
+
+.our_chef .div_img .div_chefs .shade {
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    bottom: 16vh;
+    right: 9px;
+    background-color: #2a2a2ade;
+    border-radius: 5px;
+    transition: 0.5s;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.our_chef .div_img .div_chefs:hover .shade {
+    transition: 0.5s;
+    opacity: 1;
+}
+
+.our_chef .div_img .div_chefs .shade ul {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.our_chef .div_img .div_chefs .shade ul li {
+    margin: 0 10px 0 0;
+}
+
+.our_chef .div_img .div_chefs .shade ul a {
+    color: #000;
+}
+
+.our_chef .div_img .div_chefs .shade ul a i {
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.our_chef .div_img .div_chefs .shade ul li a i:hover {
+    background-color: orangered;
+    transition: 0.5s;
+}
+
+
+.our_chef .div_img .div_chefs .title_img h3 {
+    margin: 15px 0 5px;
+}
+
+/* ==== color h3 hover====*/
+.our_chef .div_img .div_chefs:hover .title_img h3 {
+    color: orangered;
+    transition: 0.5s;
+}
+
+.our_chef .div_img .div_chefs .title_img p {
+    margin-bottom: 20px;
+}
+
+/* ==== end of our_chef ==== */
+
+
+
+
+
+
+
+
+
+
+
+/* ==== satrt of contact_us ==== */
+.contact_us {
+    background: url(../images/reservation-bg.jpg) no-repeat center;
+    background-size: cover;
+    padding: 10% 0;
+    margin: 20vh 0;
+}
+
+/* ==== satrt of contact ==== */
+.contact_us .contact {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6%;
+
+}
+
+.contact_us .contact .div_contact_us {
+    padding: 40px 0 0;
+}
+
+.contact_us .contact .div_contact_us h6::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    background-color: #fb5849;
+    width: 30px;
+    height: 2px;
+}
+
+.contact_us .contact .div_contact_us h6 {
+    font-size: 15px;
+    position: relative;
+    padding-left: 40px;
+    color: #fb5849;
+    letter-spacing: 3px;
+}
+
+.contact_us .contact .div_contact_us h2 {
+    color: #fff;
+    font-size: 31px;
+    margin: 10px 0;
+}
+
+.contact_us .contact .div_contact_us p {
+    color: #fff;
+    line-height: 25px;
+    margin: 20px 0;
+}
+
+.contact_us .contact .div_contact_us .info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6%;
+}
+
+.contact_us .contact .div_contact_us .info .div_info {
+    position: relative;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 8vh 0 0;
+}
+
+.contact_us .contact .div_contact_us .info .div_info i {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: orangered;
+    color: #fff;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.contact_us .contact .div_contact_us .info .div_info h4 {
+    margin: 25px 0 15px;
+    font-size: 20px;
+}
+
+.contact_us .contact .div_contact_us .info .div_info .data ul li {
+    list-style-type: none;
+    margin: 5px 0;
+}
+
+.contact_us .contact .div_contact_us .info .div_info .data a {
+    color: #000;
+    text-decoration: none;
+}
+
+.contact_us .contact .div_contact_us .info .div_info .data a:hover {
+    color: orangered;
+    transition: 0.5s;
+}
+
+/* ==== end contact ==== */
+
+
+/* ==== start div_form ==== */
+.contact_us .contact .div_form {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 25px 25px 10vh;
+}
+
+.contact_us .contact .div_form h2 {
+    text-align: center;
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+.contact_us .contact .div_form form {
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    gap: 3%;
+}
+
+.contact_us .contact .div_form form .table {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7%;
+    padding: 10px 0px 3vh;
+}
+
+.contact_us .contact .div_form form .table input,
+select {
+    padding: 13px 20px;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid #2a2a2a59;
+}
+
+.contact_us .contact .div_form form .table input::placeholder {
+    color: #888;
+}
+
+.contact_us .contact .div_form form textarea {
+    padding: 10px;
+    height: 25vh;
+    outline: none;
+    border-radius: 3px;
+}
+
+.contact_us .contact .div_form form textarea::placeholder {
+    color: #888;
+}
+
+.contact_us .contact .div_form form .btn_form input {
+    padding: 13px 0px;
+    width: 100%;
+    color: #fff;
+    background-color: orangered;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 0px;
+}
+
+.contact_us .contact .div_form form .btn_form input:hover {
+    background-color: rgb(255, 93, 35);
+}
+
+/* ==== end div_form ==== */
+
+
+/* ==== end of contact_us ==== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==== end of klassy_week ==== */
+
+/* ==== start div_title ==== */
+.klassy_week .div_title {
+    text-align: center;
+}
+
+.klassy_week .div_title h6 {
+    font-size: 15px;
+    letter-spacing: 3px;
+    color: orangered;
+    margin: 20px;
+}
+
+.klassy_week .div_title h2 {
+    width: 30%;
+    margin: 0 auto 12vh;
+    font-size: 35px;
+}
+
+/* ==== end div_title ==== */
+
+
+
+/* ==== start icon ==== */
+.klassy_week .icon ul {
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+}
+
+.klassy_week .icon ul li {
+    list-style-type: none;
+    width: 30%;
+    margin: auto;
+
+}
+
+.klassy_week .icon ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.klassy_week .icon ul li a h6 {
+    margin: 10px 0;
+    font-size: 15px;
+}
+
+/* ==== end icon ==== */
+
+
+/* ==== start tab_icon ==== */
+.klassy_week .tab_icon {
+    width: 80%;
+    padding: 0 0 19vh;
+    margin: 8vh auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5%;
+    row-gap: 19%;
+}
+
+.klassy_week .tab_icon .meal {
+    display: flex;
+}
+
+.klassy_week .tab_icon .meal img {
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.klassy_week .tab_icon .meal .info {
+    padding: 15px 15px 10px 0;
+}
+
+.klassy_week .tab_icon .meal .info h4 {
+    font-size: 20px;
+    margin-bottom: 8px;
+
+}
+
+.klassy_week .tab_icon .meal .info p {
+    line-height: 22px;
+}
+
+.klassy_week .tab_icon .meal .price {
+    padding: 15px 0;
+}
+
+.klassy_week .tab_icon .meal .price h6 {
+    background-color: orangered;
+    color: #fff;
+    font-size: 15px;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+    border-radius: 5px;
+}
+
+/* ==== start tab_icon ==== */
+
+/* ==== end of klassy_week ==== */
+
+
+
+
+
+
+
+
+
+/* ==== start of footer ==== */
+footer {
+    background-color: #fb5849;
+    margin-top: 20vh;
+    padding: 8vh 0;
+}
+
+footer .divFooter {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10%;
+}
+
+
+footer .divFooter .footer_icon ul {
+    display: flex;
+}
+
+footer .divFooter .footer_icon ul li {
+    list-style-type: none;
+    margin: 0 15px 0 0;
+}
+
+footer .divFooter .footer_icon ul li a {
+    text-decoration: none;
+}
+
+footer .divFooter .footer_icon ul li a i {
+    background-color: #fff;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    color: tomato;
+    transition: 0.5s;
+}
+
+footer .footer_icon ul li a:hover i {
+    color: #000;
+    transition: 0.5s;
+}
+
+/* ==== strat logo ==== */
+footer .divFooter .logo {
+    text-align: center;
+}
+
+/* ==== end logo ==== */
+
+
+/* ==== strat copyright ==== */
+footer .divFooter .copyright p {
+    text-align: end;
+    color: #fff;
+}
+
+/* ==== end copyright ==== */
+
+/* ==== end of footer ==== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==== start of responsive ==== */
+@media (max-width:425px) {
+
+
+    /* ====== start of btnArrowUP and btnArrowDown ====== */
+    .btnArrowUP a,
+    .btnArrowDown a {
+        width: 30px;
+        height: 30px;
+        right: 40px;
+    }
+
+    .btnArrowDown a {
+        top: 90vh;
+    }
+
+    /* ====== end of btnArrowUP and btnArrowDown ====== */
+
+
+
+
+
+
+    /* ==== satrt of navbar ==== */
+    .navbar .nav {
+        width: 80%;
+    }
+
+
+    /* ==== start toogle menu ==== */
+    .navbar .nav .divToogle .toogle {
+        display: flex;
+    }
+
+    /* ==== end toogle menu ==== */
+
+
+    /* ==== satrt menu ==== */
+    .navbar .menu .menTog {
+        background-color: #fff;
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 17vh;
+        left: 0;
+        max-height: 0vh;
+        text-align: center;
+        overflow: hidden;
+        transition: 1.0s;
+        box-shadow: 0 0 0.5px;
+    }
+
+    .navbar .menu .menTog.close {
+        max-height: 100vh;
+        transition: 1.5s;
+    }
+
+    .navbar .menu .menTog li {
+        border-bottom: 1px solid rgba(136, 136, 136, 0.123);
+        margin: 0;
+    }
+
+    .navbar .menu .menTog li a {
+        font-size: 13px;
+        display: block;
+        padding: 10px 0;
+    }
+
+
+    /* ==== satrt menuFeatures ==== */
+    .navbar .menu .menTog .features .ulMenu {
+        width: 100%;
+        position: relative;
+        transform: translateY(0vh);
+    }
+
+    .navbar .menu .menTog .features:hover .ulMenu {
+        transform: translateY(0vh);
+        height: 28.5vh;
+    }
+
+    .navbar .menu .menTog .features .ulMenu .menuFeatures li {
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar .menu .menTog .features .ulMenu .menuFeatures li a {
+        padding: 10px;
+        margin-left: 0px;
+    }
+
+    /* ==== end menu ==== */
+
+    /* ==== end of navbar ==== */
+
+
+
+
+
+
+
+
+    /* ==== start of header ====  */
+    .header .head {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* ==== start make_a_reservation ==== */
+    .header .head .make_a_reservation {
+        height: 50vh;
+        position: relative;
+    }
+
+    .header .head .make_a_reservation .reservation {
+        position: absolute;
+        top: 40%;
+    }
+
+    /* ==== start logo --> h6 ==== */
+    .header .head .make_a_reservation .reservation h6 {
+        font-size: 16px;
+    }
+
+    /* ==== start btn_reservation ==== */
+    .header .head .make_a_reservation .btn_reservation {
+        position: absolute;
+        top: 70%;
+        left: 55%;
+    }
+
+    .header .head .make_a_reservation .btn_reservation a {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+
+    /* ==== end btn_reservation ==== */
+    /* ==== end make_a_reservation ==== */
+
+
+
+
+
+
+    /* ==== start head_img ==== */
+    .header .head .head_img {
+        grid-row: 2/3;
+        grid-column: 1/2;
+        max-width: 100vw;
+        height: 80vh;
+    }
+
+    /* ==== end head_img ==== */
+
+
+    /* ==== start head_img btn_next_and_prev ==== */
+    .header .head .head_img .btn_next_prev .icon a {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    /* ==== end btn_next_and_prev ==== */
+
+    /* ==== end of header ==== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* ==== start about us ==== */
+    .about_us {
+        width: 95%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* ==== satrt memory_for_you ==== */
+    .about_us .memory_for_you h2 {
+        width: 95%;
+    }
+
+    .about_us .video a {
+        padding: 20px 25px;
+    }
+
+    /* ==== end memory_for_you ==== */
+
+    /* ==== end about us ==== */
+
+
+
+
+
+
+
+
+    /* ==== start of our_menu ==== */
+    .our_menu {
+        background-color: rgba(250, 235, 215, 0.253);
+        margin-top: 15vh;
+        padding: 20vh 0 1vh;
+    }
+
+
+    /* ==== start of selection_of_cakes ==== */
+    .our_menu .selection_of_cakes {
+        width: 80%;
+        margin: auto;
+    }
+
+    .our_menu .selection_of_cakes h2 {
+        margin: 30px 0;
+        width: 100%;
+        letter-spacing: 1px;
+        font-size: 30px;
+        margin: 20px 0 30px;
+        line-height: 40px;
+    }
+
+
+    /* ==== start slider_our_menu ==== */
+    .our_menu .slider_our_menu {
+        width: 95%;
+        margin: 10vh auto 0;
+    }
+
+    .our_menu .slider_our_menu .card_img_cake .card {
+        width: 397px;
+    }
+
+    .our_menu .slider_our_menu .card_img_cake .card .info {
+        transform: translateY(25vh);
+    }
+
+    .our_menu .card_img_cake .card:hover .info {
+        transform: translateY(-4vh);
+    }
+
+    .our_menu .slider_our_menu .card_img_cake .card .div_img img {
+        width: 100%;
+    }
+
+    /* ==== start btn_next_and_prev ==== */
+    .our_menu .btn_next_prev {
+        margin: 3vh 0;
+    }
+
+    /* ==== end btn_next_and_prev ==== */
+
+    /* ==== end of our_menu ==== */
+
+
+
+
+
+
+
+
+
+    /* ==== start of our_chef ==== */
+    .our_chef .title_our_chef h2 {
+        width: 80%;
+    }
+
+    /* ==== end title_our_chef ==== */
+
+    /* ==== start div_img  ==== */
+    .our_chef .div_img {
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .our_chef .div_img .div_chefs .shade {
+        bottom: 18vh;
+    }
+
+    /* ==== end of our_chef ==== */
+
+
+
+
+
+
+
+
+
+
+    /* ==== satrt of contact_us ==== */
+    .contact_us {
+        padding: 20% 0 45%;
+    }
+
+    /* ==== satrt of contact ==== */
+    .contact_us .contact {
+        width: 95%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .contact_us .contact .div_contact_us .info {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* ==== end contact ==== */
+
+
+    /* ==== start div_form ==== */
+    .contact_us .contact .div_form form .table {
+        grid-template-columns: 1fr;
+        padding: 10px 0px 15vh;
+    }
+
+    .contact_us .contact .div_form form .table #date {
+        padding: 23px 20px;
+    }
+
+    /* ==== end div_form ==== */
+
+    /* ==== end of contact_us ==== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* ==== end of klassy_week ==== */
+
+    /* ==== start div_title ==== */
+    .klassy_week .div_title h2 {
+        width: 80%;
+    }
+
+    /* ==== end div_title ==== */
+
+    /* ==== start icon ==== */
+    .klassy_week .icon ul {
+        width: 80%;
+    }
+
+    /* ==== end icon ==== */
+
+
+    /* ==== start tab_icon ==== */
+    .klassy_week .tab_icon {
+        width: 95%;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 5%;
+    }
+
+    .klassy_week .tab_icon .meal img {
+        margin-right: 20px;
+        max-height: 20vh;
+    }
+
+    .klassy_week .tab_icon .meal .info {
+        padding: 0px 25px 10px 0;
+    }
+
+    /* ==== start tab_icon ==== */
+
+    /* ==== end of klassy_week ==== */
+
+
+
+
+
+
+
+    /* ==== start of footer ==== */
+    footer {
+        padding: 10vh 0;
+    }
+
+    footer .divFooter {
+        width: 95%;
+        padding: 0 0 15vh;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 20%;
+    }
+
+    footer .divFooter .footer_icon ul {
+        justify-content: center;
+    }
+
+    /* ==== strat copyright ==== */
+    footer .divFooter .copyright p {
+        text-align: center;
+    }
+
+    /* ==== end copyright ==== */
+    /* ==== end of footer ==== */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width:425px) {
+
+
+    /* ====== start of btnArrowUP and btnArrowDown ====== */
+    .btnArrowUP a,
+    .btnArrowDown a {
+        width: 35px;
+        height: 35px;
+        right: 40px;
+    }
+
+    .btnArrowDown a {
+        top: 91vh;
+    }
+
+    /* ====== end of btnArrowUP and btnArrowDown ====== */
+
+
+
+
+
+
+    /* ==== satrt of navbar ==== */
+    .navbar .nav {
+        width: 80%;
+    }
+
+
+    /* ==== start toogle menu ==== */
+    .navbar .nav .divToogle .toogle {
+        display: flex;
+    }
+
+    /* ==== end toogle menu ==== */
+
+
+    /* ==== satrt menu ==== */
+    .navbar .menu .menTog {
+        background-color: #fff;
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 18vh;
+        left: 0;
+        max-height: 0vh;
+        text-align: center;
+        overflow: hidden;
+        transition: 1.0s;
+        box-shadow: 0 0 0.5px;
+    }
+
+    .navbar .menu .menTog.close {
+        max-height: 100vh;
+        transition: 1.5s;
+    }
+
+    .navbar .menu .menTog li {
+        border-bottom: 1px solid rgba(136, 136, 136, 0.123);
+        margin: 0;
+    }
+
+    .navbar .menu .menTog li a {
+        font-size: 13px;
+        display: block;
+        padding: 10px 0;
+    }
+
+
+    /* ==== satrt menuFeatures ==== */
+    .navbar .menu .menTog .features .ulMenu {
+        width: 100%;
+        position: relative;
+        transform: translateY(0vh);
+    }
+
+    .navbar .menu .menTog .features:hover .ulMenu {
+        transform: translateY(0vh);
+        height: 28.5vh;
+    }
+
+    .navbar .menu .menTog .features .ulMenu .menuFeatures li {
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar .menu .menTog .features .ulMenu .menuFeatures li a {
+        padding: 10px;
+        margin-left: 0px;
+    }
+
+    /* ==== end menu ==== */
+    /* ==== end of navbar ==== */
+
+
+
+
+
+
+
+
+    /* ==== start of header ====  */
+    .header .head {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* ==== start make_a_reservation ==== */
+    .header .head .make_a_reservation {
+        height: 60vh;
+        position: relative;
+    }
+
+    .header .head .make_a_reservation .reservation {
+        text-align: center;
+        position: absolute;
+        top: 45%;
+    }
+
+    /* ==== start logo --> h6 ==== */
+    .header .head .make_a_reservation .reservation h6 {
+        font-size: 16px;
+    }
+
+    /* ==== start btn_reservation ==== */
+    .header .head .make_a_reservation .btn_reservation {
+        position: absolute;
+        text-align: center;
+        top: 70%;
+        left: 50%;
+    }
+
+    .header .head .make_a_reservation .btn_reservation a {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    /* ==== end btn_reservation ==== */
+
+    /* ==== end make_a_reservation ==== */
+
+
+
+
+
+
+
+
+    /* ==== start head_img ==== */
+    .header .head .head_img {
+        grid-row: 2/3;
+        grid-column: 1/2;
+        max-width: 100vw;
+        height: 80vh;
+    }
+
+    /* ==== end head_img ==== */
+
+
+    /* ==== start head_img btn_next_and_prev ==== */
+    .header .head .head_img .btn_next_prev .icon a {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    /* ==== end btn_next_and_prev ==== */
+
+    /* ==== end of header ==== */
+
+
+
+
+
+
+
+    /* ==== start about us ==== */
+    .about_us {
+        width: 95%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* ==== satrt memory_for_you ==== */
+    .about_us .memory_for_you h2 {
+        width: 95%;
+    }
+
+    .about_us .video a {
+        padding: 20px 25px;
+    }
+
+    /* ==== end memory_for_you ==== */
+
+    /* ==== end about us ==== */
+
+
+
+
+
+
+
+
+    /* ==== start of our_menu ==== */
+    .our_menu {
+        background-color: rgba(250, 235, 215, 0.253);
+        margin-top: 15vh;
+        padding: 20vh 0 1vh;
+    }
+
+
+    /* ==== start of selection_of_cakes ==== */
+    .our_menu .selection_of_cakes {
+        width: 80%;
+        margin: auto;
+    }
+
+    .our_menu .selection_of_cakes h2 {
+        margin: 30px 0;
+        width: 100%;
+        letter-spacing: 1px;
+        font-size: 30px;
+        margin: 20px 0 30px;
+        line-height: 40px;
+    }
+
+
+    /* ==== start slider_our_menu ==== */
+    .our_menu .slider_our_menu {
+        width: 90%;
+        margin: 10vh auto 0;
+    }
+
+    .our_menu .slider_our_menu .card_img_cake .card {
+        width: 385px;
+    }
+
+    .our_menu .slider_our_menu .card_img_cake .card .info {
+        transform: translateY(25vh);
+    }
+
+    .our_menu .card_img_cake .card:hover .info {
+        transform: translateY(-4vh);
+    }
+
+    .our_menu .slider_our_menu .card_img_cake .card .div_img img {
+        width: 100%;
+    }
+
+    /* ==== start btn_next_and_prev ==== */
+    .our_menu .btn_next_prev {
+        margin: 3vh 0;
+    }
+
+    /* ==== end btn_next_and_prev ==== */
+
+    /* ==== end of our_menu ==== */
+
+
+
+
+
+
+
+
+
+    /* ==== start of our_chef ==== */
+    .our_chef .title_our_chef h2 {
+        width: 80%;
+    }
+
+    /* ==== end title_our_chef ==== */
+
+    /* ==== start div_img  ==== */
+    .our_chef .div_img {
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .our_chef .div_img .div_chefs .shade {
+        bottom: 18vh;
+    }
+
+    /* ==== end of our_chef ==== */
+
+
+
+
+
+
+
+
+
+
+    /* ==== satrt of contact_us ==== */
+    .contact_us {
+        padding: 20% 0 45%;
+    }
+
+    /* ==== satrt of contact ==== */
+    .contact_us .contact {
+        width: 95%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .contact_us .contact .div_contact_us .info {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* ==== end contact ==== */
+
+
+    /* ==== start div_form ==== */
+    .contact_us .contact .div_form form .table {
+        grid-template-columns: 1fr;
+        padding: 10px 0px 15vh;
+    }
+
+    .contact_us .contact .div_form form .table #date {
+        padding: 23px 20px;
+    }
+
+    /* ==== end div_form ==== */
+
+    /* ==== end of contact_us ==== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* ==== end of klassy_week ==== */
+
+    /* ==== start div_title ==== */
+    .klassy_week .div_title h2 {
+        width: 80%;
+    }
+
+    /* ==== end div_title ==== */
+
+    /* ==== start icon ==== */
+    .klassy_week .icon ul {
+        width: 90%;
+    }
+
+    /* ==== end icon ==== */
+
+
+    /* ==== start tab_icon ==== */
+    .klassy_week .tab_icon {
+        width: 95%;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 5%;
+    }
+
+    .klassy_week .tab_icon .meal img {
+        margin-right: 20px;
+        max-height: 20vh;
+    }
+
+    .klassy_week .tab_icon .meal .info {
+        padding: 0px 25px 10px 0;
+    }
+
+    /* ==== start tab_icon ==== */
+
+    /* ==== end of klassy_week ==== */
+
+
+
+
+
+
+
+    /* ==== start of footer ==== */
+    footer {
+        padding: 10vh 0;
+    }
+
+    footer .divFooter {
+        width: 95%;
+        padding: 0 0 15vh;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 20%;
+    }
+
+    footer .divFooter .footer_icon ul {
+        justify-content: center;
+    }
+
+    /* ==== strat copyright ==== */
+    footer .divFooter .copyright p {
+        text-align: center;
+    }
+
+    /* ==== end copyright ==== */
+    /* ==== end of footer ==== */
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width:768px) {
+
+    /* ==== start of header ====  */
+    /* ==== start make_a_reservation ==== */
+    .header .head .make_a_reservation {
+        height: 55vh;
+    }
+
+    /* ==== end make_a_reservation ==== */
+    /* ==== end of header ==== */
+
+
+
+
+
+
+
+    /* ==== start about us ==== */
+    .about_us {
+        width: 80%;
+    }
+
+    /* ==== satrt memory_for_you ==== */
+    .about_us .memory_for_you h2 {
+        width: 55%;
+    }
+
+    .about_us .video a {
+        padding: 23px 28px;
+    }
+
+    /* ==== end memory_for_you ==== */
+    /* ==== end about us ==== */
+
+
+
+
+
+
+
+
+    /* ==== start of our_menu ==== */
+    /* ==== start of selection_of_cakes ==== */
+    .our_menu .selection_of_cakes h2 {
+        width: 55%;
+
+    }
+
+
+    /* ==== start slider_our_menu ==== */
+    .our_menu .slider_our_menu {
+        width: 95%;
+    }
+
+    .our_menu .slider_our_menu .card_img_cake .card {
+        width: 349px;
+    }
+
+    /* ==== end of our_menu ==== */
+
+
+
+
+
+
+
+
+
+    /* ==== start of our_chef ==== */
+    .our_chef {
+        padding: 10vh 0;
+
+    }
+
+    .our_chef .title_our_chef h2 {
+        width: 50%;
+
+    }
+
+    /* ==== end title_our_chef ==== */
+
+    /* ==== start div_img  ==== */
+    .our_chef .div_img {
+        width: 80%;
+    }
+
+    /* ==== end of our_chef ==== */
+
+
+
+
+
+
+
+
+    /* ==== satrt of contact_us ==== */
+    .contact_us {
+        padding: 15% 0 30%;
+    }
+
+    /* ==== satrt of contact ==== */
+    .contact_us .contact {
+        width: 80%;
+    }
+
+    /* ==== end contact ==== */
+    /* ==== end of contact_us ==== */
+
+
+
+
+
+
+
+
+
+    /* ==== start of klassy_week ==== */
+
+    /* ==== start div_title ==== */
+    .klassy_week .div_title h2 {
+        width: 50%;
+    }
+
+    /* ==== end div_title ==== */
+
+    /* ==== start tab_icon ==== */
+    .klassy_week .icon ul {
+        width: 60%;
+    }
+
+    .klassy_week .tab_icon {
+        width: 80%;
+    }
+
+    /* ==== start tab_icon ==== */
+    /* ==== end of klassy_week ==== */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width:1024px) {
+
+
+    /* ====== start of btnArrowUP and btnArrowDown ====== */
+    .btnArrowUP a,
+    .btnArrowDown a {
+        width: 40px;
+        height: 40px;
+        right: 70px;
+    }
+
+    .btnArrowDown a {
+        top: 90vh;
+    }
+
+    /* ====== end of btnArrowUP and btnArrowDown ====== */
+
+
+
+
+
+
+    /* ==== satrt of navbar ==== */
+    .navbar {
+        background-color: #fff;
+        padding: 20px 0;
+        box-shadow: 0px 0 8px;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+    }
+
+    .navbar .nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+        margin: auto;
+        justify-content: space-between;
+    }
+
+
+    /* ==== start toogle menu ==== */
+    .navbar .nav .divToogle {
+        display: none;
+    }
+
+    /* ==== end toogle menu ==== */
+
+
+    /* ==== satrt menu ==== */
+    .navbar .menu .menTog {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top: 0;
+        align-items: center;
+        overflow: visible;
+        border: none;
+    }
+
+    .navbar .menu .menTog li {
+        border: none;
+        margin: 0;
+    }
+
+    .navbar .menu .menTog li a {
+        font-size: 15px;
+        display: block;
+
+        padding: 0 10px;
+    }
+
+
+    /* ==== satrt menuFeatures ==== */
+    .navbar .menu .menTog .features .ulMenu {
+        position: absolute;
+        top: 6vh;
+        transform: translateY(0vh);
+        width: 250px;
+
+    }
+
+    .navbar .menu .menTog .features:hover .ulMenu {
+        transform: translateY(0vh);
+        height: 29vh;
+    }
+
+    .navbar .menu .menTog .features .ulMenu .menuFeatures li {
+        padding: 5px 0;
+
+    }
+
+    .navbar .menu .menTog .features .ulMenu .menuFeatures li a {
+        padding: 10px;
+        margin-left: 0px;
+    }
+
+    /* ==== end menu ==== */
+    /* ==== end of navbar ==== */
+
+
+
+
+
+
+
+
+    /* ==== start of header ====  */
+    .header {
+        padding-top: 14vh;
+    }
+
+    .header .head {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* ==== start make_a_reservation ==== */
+    .header .head .make_a_reservation {
+        height: 80vh;
+    }
+
+    .header .head .make_a_reservation .reservation {
+        width: 100%;
+    }
+
+    /* ==== start logo --> h6 ==== */
+    .header .head .make_a_reservation .reservation h6 {
+        font-size: 16px;
+    }
+
+    /* ==== start btn_reservation ==== */
+    .header .head .make_a_reservation .btn_reservation {
+        width: 100%;
+        top: 60%;
+    }
+
+    .header .head .make_a_reservation .btn_reservation a {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    /* ==== end btn_reservation ==== */
+
+    /* ==== end make_a_reservation ==== */
+
+
+
+
+
+
+
+
+    /* ==== start head_img ==== */
+    .header .head .head_img {
+        grid-row: 1;
+        grid-column: 2/4;
+        max-width: 70vw;
+        height: 80vh;
+    }
+
+    /* ==== end head_img ==== */
+
+
+    /* ==== start head_img btn_next_and_prev ==== */
+    .header .head .head_img .btn_next_prev .icon a {
+        padding: 13px 20px;
+        font-size: 15px;
+    }
+
+    /* ==== end btn_next_and_prev ==== */
+    /* ==== end of header ==== */
+
+
+
+
+
+
+
+    /* ==== start about us ==== */
+    .about_us {
+        width: 80%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* ==== satrt memory_for_you ==== */
+    .about_us .memory_for_you h2 {
+        width: 95%;
+    }
+
+    .about_us .memory_for_you p {
+        font-size: 17px;
+    }
+
+    /* ==== end memory_for_you ==== */
+
+    /* ==== start div video ==== */
+    .about_us .video a {
+        position: absolute;
+        top: 30%;
+        padding: 15px 20px;
+    }
+
+    /* ==== end div video ==== */
+
+    /* ==== end about us ==== */
+
+
+
+
+
+
+
+
+    /* ==== start of our_menu ==== */
+    /* ==== start of selection_of_cakes ==== */
+    .our_menu .selection_of_cakes {
+        width: 80%;
+        margin: auto;
+    }
+
+    .our_menu .selection_of_cakes h2 {
+        width: 50%;
+    }
+
+    /* ==== start slider_our_menu ==== */
+    .our_menu .slider_our_menu {
+        width: 95%;
+    }
+
+    .our_menu .slider_our_menu .card_img_cake .card {
+        width: 304px;
+    }
+
+    .our_menu .slider_our_menu .card_img_cake .card .info {
+        transform: translateY(23vh);
+    }
+
+    .our_menu .card_img_cake .card:hover .info {
+        transform: translateY(-4vh);
+    }
+
+    /* ==== end of our_menu ==== */
+
+
+
+
+
+
+
+
+
+    /* ==== start of our_chef ==== */
+    .our_chef .title_our_chef h6 {
+        margin: 0 0 3vh 0;
+    }
+
+    .our_chef .title_our_chef h2 {
+        width: 40%;
+    }
+
+    /* ==== end title_our_chef ==== */
+
+    /* ==== start div_img  ==== */
+    .our_chef .div_img {
+        margin: 8vh auto 0vh;
+        width: 80%;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .our_chef .div_img .div_chefs .shade {
+        bottom: 14vh;
+    }
+
+    /* ==== end of our_chef ==== */
+
+
+
+
+
+
+
+
+
+
+    /* ==== satrt of contact_us ==== */
+    .contact_us {
+        padding: 10% 0 25%;
+        margin: 10vh 0;
+    }
+
+    /* ==== satrt of contact ==== */
+    .contact_us .contact {
+        width: 80%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .contact_us .contact .div_contact_us h2 {
+        width: 65%;
+        margin: 15px 0;
+    }
+
+    .contact_us .contact .div_contact_us p {
+        line-height: 35px;
+        font-size: 18px;
+        margin: 25px 0;
+    }
+
+    .contact_us .contact .div_contact_us .info {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3%;
+    }
+
+    /* ==== end contact ==== */
+
+
+    /* ==== start div_form ==== */
+    .contact_us .contact .div_form form .table {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3%;
+        row-gap: 3vh;
+        padding: 10px 0px 2vh;
+    }
+
+
+    .contact_us .contact .div_form form .table input,
+    select {
+        padding: 20px 25px;
+    }
+
+    .contact_us .contact .div_form form .table input::placeholder {
+        font-size: 16px;
+    }
+
+    .contact_us .contact .div_form form textarea::placeholder {
+        font-size: 16px;
+    }
+
+    /* ==== end div_form ==== */
+
+    /* ==== end of contact_us ==== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* ==== end of klassy_week ==== */
+
+    /* ==== start div_title ==== */
+    .klassy_week .div_title h2 {
+        width: 50%;
+    }
+
+    /* ==== end div_title ==== */
+
+    /* ==== start icon ==== */
+    .klassy_week .icon ul {
+        width: 65%;
+    }
+
+    /* ==== end icon ==== */
+
+
+    /* ==== start tab_icon ==== */
+    .klassy_week .tab_icon {
+        width: 85%;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 3%;
+        padding: 0;
+    }
+
+    .klassy_week .tab_icon .meal img {
+        margin: 0 20px 20px 0;
+
+    }
+
+    /* ==== start tab_icon ==== */
+
+    /* ==== end of klassy_week ==== */
+
+
+
+
+
+
+
+    /* ==== start of footer ==== */
+    footer {
+        padding: 10vh 0;
+    }
+
+    footer .divFooter {
+        width: 80%;
+        padding: 8vh 0;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 20%;
+    }
+
+    footer .divFooter .footer_icon ul {
+        justify-content: center;
+    }
+
+    /* ==== strat copyright ==== */
+    footer .divFooter .copyright p {
+        text-align: center;
+    }
+
+    /* ==== end copyright ==== */
+    /* ==== end of footer ==== */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width:1200px) {
+
+
+    /* ====== start of btnArrowUP and btnArrowDown ====== */
+    .btnArrowUP a,
+    .btnArrowDown a {
+        width: 40px;
+        height: 40px;
+        right: 70px;
+    }
+
+    .btnArrowDown a {
+        top: 90vh;
+    }
+
+    /* ====== end of btnArrowUP and btnArrowDown ====== */
+
+
+
+
+
+
+    /* ==== satrt of navbar ==== */
+    .navbar .nav {
+        width: 80%;
+    }
+
+    /* ==== satrt menu ==== */
+    .navbar .menu .menTog {
+        justify-content: end;
+    }
+
+    /* ==== satrt menuFeatures ==== */
+    .navbar .menu .menTog .features:hover .ulMenu {
+        height: 33.5vh;
+    }
+
+    /* ==== end menu ==== */
+    /* ==== end of navbar ==== */
+
+
+
+
+
+
+
+
+    /* ==== start of header ====  */
+    .header {
+        padding-top: 16vh;
+    }
+
+    /* ==== start make_a_reservation ==== */
+    .header .head .make_a_reservation {
+        height: 100vh;
+    }
+
+    /* ==== end make_a_reservation ==== */
+
+
+
+
+    /* ==== start head_img ==== */
+    .header .head .head_img {
+        height: 100vh;
+    }
+
+    /* ==== end head_img ==== */
+    /* ==== end of header ==== */
+
+
+
+
+
+
+
+    /* ==== start about us ==== */
+    .about_us {
+        width: 80%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* ==== satrt memory_for_you ==== */
+    .about_us .memory_for_you h2 {
+        width: 65%;
+    }
+
+    .about_us .memory_for_you p {
+        font-size: 16px;
+    }
+
+    /* ==== end memory_for_you ==== */
+
+    /* ==== start div video ==== */
+    .about_us .video a {
+        top: 50%;
+        padding: 25px 30px;
+    }
+
+    /* ==== end div video ==== */
+    /* ==== end about us ==== */
+
+
+
+
+
+
+
+
+    /* ==== start of our_menu ==== */
+    /* ==== start of selection_of_cakes ==== */
+    .our_menu .selection_of_cakes h2 {
+        width: 30%;
+    }
+
+    /* ==== start slider_our_menu ==== */
+    .our_menu .slider_our_menu {
+        width: 97%;
+    }
+
+    .our_menu .slider_our_menu .card_img_cake .card {
+        width: 239px;
+    }
+
+    .our_menu .slider_our_menu .card_img_cake .card .info {
+        transform: translateY(30vh);
+    }
+
+    .our_menu .card_img_cake .card:hover .info {
+        transform: translateY(-6vh);
+    }
+
+    /* ==== end of our_menu ==== */
+
+
+
+
+
+
+
+
+
+    /* ==== start of our_chef ==== */
+    .our_chef .title_our_chef h2 {
+        width: 30%;
+    }
+
+    /* ==== end title_our_chef ==== */
+
+    /* ==== start div_img  ==== */
+    .our_chef .div_img .div_chefs .shade {
+        bottom: 16vh;
+    }
+
+    /* ==== end of our_chef ==== */
+
+
+
+
+
+
+
+
+
+
+    /* ==== satrt of contact_us ==== */
+    .contact_us {
+        padding: 10% 0;
+        margin: 10vh 0;
+    }
+
+    /* ==== satrt of contact ==== */
+    .contact_us .contact {
+        width: 80%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact_us .contact .div_contact_us h2 {
+        width: 100%;
+    }
+
+    .contact_us .contact .div_contact_us p {
+        line-height: 30px;
+        font-size: 16px;
+        margin: 25px 0;
+    }
+
+    .contact_us .contact .div_contact_us .info {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3%;
+    }
+
+    /* ==== end contact ==== */
+
+
+    /* ==== start div_form ==== */
+    .contact_us .contact .div_form form .table {
+        row-gap: 2vh;
+        padding: 10px 0px 0;
+    }
+
+
+    .contact_us .contact .div_form form .table input,
+    select {
+        padding: 15px 20px;
+    }
+
+    .contact_us .contact .div_form form .table input::placeholder {
+        font-size: 14px;
+    }
+
+    .contact_us .contact .div_form form .table #date {
+        padding: 15px 20px;
+    }
+
+    .contact_us .contact .div_form form textarea {
+        height: 20vh;
+    }
+
+    .contact_us .contact .div_form form textarea::placeholder {
+        font-size: 16px;
+    }
+
+    /* ==== end div_form ==== */
+
+    /* ==== end of contact_us ==== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* ==== end of klassy_week ==== */
+
+    /* ==== start div_title ==== */
+    .klassy_week .div_title h2 {
+        width: 30%;
+    }
+
+    /* ==== end div_title ==== */
+
+    /* ==== start icon ==== */
+    .klassy_week .icon ul {
+        width: 30%;
+    }
+
+    /* ==== end icon ==== */
+
+
+    /* ==== start tab_icon ==== */
+    .klassy_week .tab_icon {
+        width: 80%;
+        column-gap: 5%;
+        row-gap: 19%;
+        padding: 0 0 19vh;
+    }
+
+    .klassy_week .tab_icon .meal img {
+        margin: 0 15px 0px 0;
+    }
+
+    /* ==== start tab_icon ==== */
+
+    /* ==== end of klassy_week ==== */
+
+
+
+
+
+
+
+    /* ==== start of footer ==== */
+    footer {
+        padding: 8vh 0;
+    }
+
+    footer .divFooter {
+        padding: 5vh 0;
+    }
+
+    /* ==== end of footer ==== */
+}
+
+/* ==== end of responsive ==== */
